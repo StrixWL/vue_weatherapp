@@ -43,8 +43,8 @@
 <script>
 export default {
     props: {
-        cityName: {
-            type: String,
+        cityData: {
+            type: Object,
             required: true
         }
     },
@@ -68,23 +68,24 @@ export default {
     },
     methods: {
         fetchWeatherData() {
-            fetch(`https://api.weatherapi.com/v1/current.json?q=${this.cityName}&key=${this.apiKey}`)
-                .then(r => r.json())
-                .then(data => {
-                    this.city = data.location.name
-                    this.country = data.location.country
-                    this.date = 'Monday 01/17/2024'
-                    this.temperature = data.current.temp_c
-                    this.weatherCondition = data.current.condition.text
-                    this.visibility = data.current.vis_km
-                    this.feelsLike = data.current.feelslike_c
-                    this.humidity = data.current.humidity
-                    this.wind = data.current.wind_kph
-                    this.icon = "http:" + data.current.condition.icon.replace('64x64', '128x128')
-                })
-                .catch(() => {
-                    console.log("bruh");
-                });
+            if (this.cityData.obj.city)
+                Object.assign(this, this.cityData.obj);
+            else {
+                fetch(`https://api.weatherapi.com/v1/current.json?q=${this.cityData.name}&key=${this.apiKey}`)
+                    .then(r => r.json())
+                    .then(data => {
+                        this.city = data.location.name
+                        this.country = data.location.country
+                        this.date = 'Monday 01/17/2024'
+                        this.temperature = data.current.temp_c
+                        this.weatherCondition = data.current.condition.text
+                        this.visibility = data.current.vis_km
+                        this.feelsLike = data.current.feelslike_c
+                        this.humidity = data.current.humidity
+                        this.wind = data.current.wind_kph
+                        this.icon = "http:" + data.current.condition.icon.replace('64x64', '128x128')
+                    })
+            }
         }
     }
 };
