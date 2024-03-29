@@ -39,7 +39,7 @@ export default {
 .swiper-container {
     font-size: 10vh;
     width: 4em;
-    height: 6em;
+    height: 5.5em;
     max-height: 90%;
 }
 

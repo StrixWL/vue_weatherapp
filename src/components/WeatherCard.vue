@@ -7,8 +7,18 @@
                 <p>Monday 01/17/2024</p>
             </div>
         </div>
-        <div class="section2"></div>
-        <div class="section3"></div>
+        <div class="section2">
+            <div class="temperature">
+                15<span>°C</span>
+            </div>
+            <div class="condition">
+                mostly cloudy
+            </div>
+        </div>
+        <div class="section3">
+            
+
+        </div>
     </div>
 </template>
 
@@ -16,7 +26,6 @@
 </script>
 
 <style scoped>
-
 .weather-card {
     widows: 100%;
     height: 100%;
@@ -33,8 +42,12 @@
 }
 
 .section2 {
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
     height: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .section3 {
@@ -68,4 +81,22 @@
     margin-left: 1.6em;
 }
 
+.temperature {
+    height: 60%;
+    font-size: 1.7em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature span {
+    font-size: .2em;
+    position: relative;
+    bottom: 1.3em;
+}
+
+.condition {
+    font-size: .2em;
+}
 </style>
