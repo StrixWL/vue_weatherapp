@@ -2,9 +2,11 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <WeatherCard />
+                <WeatherCard cityName="Rabat"/>
             </div>
-            <div class="swiper-slide"></div>
+            <div class="swiper-slide">
+                <WeatherCard cityName="Oujda"/>
+            </div>
             <div class="swiper-slide add-city">
                 <div class="add-city__btn">
                     <img src="../assets/add.svg"/>
