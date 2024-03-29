@@ -1,10 +1,10 @@
 <template>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"></div>
             <div class="swiper-slide">
                 <WeatherCard />
             </div>
+            <div class="swiper-slide"></div>
             <div class="swiper-slide add-city">
                 <div class="add-city__btn">
                     <img src="../assets/add.svg"/>
