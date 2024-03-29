@@ -46,6 +46,10 @@ export default {
         cityData: {
             type: Object,
             required: true
+        },
+        deleteSelf: {
+            type: Function,
+            required: true
         }
     },
     data() {
@@ -92,6 +96,12 @@ export default {
 </script>
 
 <style scoped>
+.delete-card {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .weather-card {
     height: 100%;
     display: flex;
