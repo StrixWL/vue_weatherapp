@@ -1,0 +1,23 @@
+what is a design system
+-a design system is a comprehensive set of guidelines, principles, and resusable components that are made to facilitate the creation, of digital products
+>assets library like icons font etc
+>components/patterns libraries
+>storybook docs?
+
+
+why building unique design system for sqli
+>fast delivery: speed up design and development cycles and save time by having resulable components
+>reduce redundancy: build it one time and reusite thousands of time and changing the source (DS) will affect all users.
+>foster quality: better UX/UI, accessibility, performance and responsiveness
+
+design system challenges
+>maintaining consistency across members and projects
+>balancing dlexibility and standardization
+>Managing updates and version control
+
+
+sqli design system
+
+demo
+
+next steps

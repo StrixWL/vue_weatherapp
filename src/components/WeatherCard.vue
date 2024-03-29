@@ -1,5 +1,8 @@
 <template>
     <div class="weather-card">
+        <button :onclick="deleteSelf" class="delete-card">
+            <img src="../assets/delete.svg" />
+        </button>
         <div class="section1">
             <img :src="icon" />
             <div class="city-infos">
@@ -98,15 +101,26 @@ export default {
 <style scoped>
 .delete-card {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: .2em;
+    right: .2em;
+    width: .4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete-card:hover img {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 2em;
 }
 
 .weather-card {
     height: 100%;
     display: flex;
     flex-direction: column;
-    color: white
+    color: white;
 }
 
 .section1 {

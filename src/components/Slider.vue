@@ -9,9 +9,10 @@
                     <img src="../assets/add.svg" />
                     <h2>Add new location</h2>
                 </button>
-                <input ref="inputRef" class="city-input" placeholder="Location name" type="text" v-model="inputValue" @keyup.enter="addCityButton"/>
+                <input ref="inputRef" class="city-input" placeholder="Location name" type="text" v-model="inputValue"
+                    @keyup.enter="addCityButton" />
                 <aside v-if="displayInvalid" class="input-msg">Invalid location :(</aside>
-                <img v-if="isLoading" class="spinner" src="../assets/spinner.svg"/>
+                <img v-if="isLoading" class="spinner" src="../assets/spinner.svg" />
             </div>
         </div>
     </div>
@@ -25,14 +26,15 @@ import WeatherCard from './WeatherCard.vue'
 export default {
     methods: {
         eraseCity(id) {
-            // please ignore this, i couldnt find any other way, i know i could have used splice but it wouldnt work smh
             let temp = [...this.cities]
             this.cities = []
-            temp = temp.filter(item => item.id != id)
+            temp = temp.filter(city => city.id != id);
             this.$nextTick(() => {
-                this.cities = [...temp]
-                this.swiper.update();
-            })
+                    this.cities = temp
+                    console.log(this.cities)
+                    console.log(this.cities.length)
+                    this.swiper.update()
+            });
         },
         addCityButton() {
             if (this.inputValue == '') {
@@ -82,18 +84,23 @@ export default {
                     id: 0,
                     name: "Rabat",
                     obj: {}
+                },
+                {
+                    id: 1,
+                    name: "Oujda",
+                    obj: {}
                 }
             ],
             inputValue: '',
             apiKey: '064c662231bb47748b7114929242103',
             displayInvalid: false,
             isLoading: false,
-            currentID: 1
+            currentID: 2
         }
     },
     mounted() {
         this.swiper = new Swiper('.swiper-container', {
-            spaceBetween: 20
+            spaceBetween: 0
         });
     },
     components: {
@@ -116,6 +123,7 @@ export default {
     background-color: rgba(0, 0, 0, .4);
     border-radius: 4vh;
     transition: all .2s;
+    margin: 0 20px;
 }
 
 .add-city {
@@ -167,5 +175,4 @@ export default {
     height: .3em;
     bottom: 1.04em;
 }
-
 </style>
